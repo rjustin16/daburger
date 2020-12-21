@@ -1,7 +1,7 @@
 const connection = require('./connection.js');
 const util = require('util');
 
-// connection.query = util.promisify(connection.query);
+connection.query = util.promisify(connection.query);
 
 const orm = {
   selectAll(table, cb) {
