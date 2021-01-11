@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eat Da Burger!</title>
   <script src="https://code.jquery.com/jquery.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
 </head>
 
@@ -22,7 +23,7 @@
           type: "PUT",
         }).then(() => location.reload());
       });
-      $(".create-form").on("submit", (e) => {
+      $(".form").on("submit", (e) => {
         e.preventDefault();
         const burger_name = $("#ca").val().trim();
         $.ajax("/api/burgers", {
