@@ -13,9 +13,10 @@
   <div>
   {{{ body }}}
   </div>
+  script
   <script>
     $(() => {
-      $(".eaten-btn").on("click", (e) => {
+      $(".eat-btn").on("click", (e) => {
         const id = $(e.target).data("id");
         $.ajax("/api/burgers/" + id, {
           type: "PUT",
@@ -23,7 +24,7 @@
       });
       $(".create-form").on("submit", (e) => {
         e.preventDefault();
-        const burger_name = $("#name").val().trim();
+        const burger_name = $("#ca").val().trim();
         $.ajax("/api/burgers", {
           type: "POST",
           data: { burger_name },

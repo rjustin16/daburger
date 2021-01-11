@@ -5,15 +5,13 @@ const express = require('express');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-////////////////////////////////////////////////////////////////////
-// Middleware
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
 
-////////////////////////////////////////////////////////////////////
-// Templates
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
