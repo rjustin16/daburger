@@ -6,33 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eat Da Burger!</title>
   <script src="https://code.jquery.com/jquery.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
 </head>
 
 <body>
   <div>
-  {{{ body }}}
+    {{{ body }}}
   </div>
-  
-  <script>
-    $(() => {
-      $(".eat-btn").on("click", (e) => {
-        const id = $(e.target).data("id");
-        $.ajax("/api/burgers/" + id, {
-          type: "PUT",
-        }).then(() => location.reload());
-      });
-      $(".form").on("submit", (e) => {
-        e.preventDefault();
-        const burger_name = $("#ca").val().trim();
-        $.ajax("/api/burgers", {
-          type: "POST",
-          data: { burger_name },
-        }).then(() => location.reload());
-      });
-    })
-  </script>
+<script >$(function () {
+    $(".eat-btn").on("click", function (e) {
+      const id = $(e.target).data("id");
+      $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+      }).then(() => location.reload());
+    });
+
+
+    $(".form").on("submit", function (e) {
+      e.preventDefault();
+      const burger_name = $("#ca").val().trim();
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: { burger_name },
+      }).then(() => location.reload());
+    });
+  });</script>
 </body>
 
 </html>
